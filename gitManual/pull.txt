@@ -1,0 +1,21 @@
+リモートリポジトリの最新状態をローカルに反映する
+
+SourceTree編
+  1. プルを選択
+    プルするリモートブランチを選択
+
+  2. OKを押す
+
+  ※fetch -> merge の流れで最新状態を持ってくるのが理想だが、
+  　何故か上手くいかなかった:(
+
+git-bash編
+  pullコマンドは使わず、「fetch -> merge」を使う
+  
+  1. 「git fetch」で、origin/branchName にリモートの最新状態を取得
+
+  2. 「git merge origin/branchName --no-f」で
+      ローカルの作業ブランチに origin/branchName の状態を取り入れる
+      この時、「--no-f」というオプションを付けてnon-fast-forwardにする
+
+  
